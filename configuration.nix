@@ -113,7 +113,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     wget
     auto-cpufreq
     firefox
@@ -133,9 +133,6 @@
     clipse
     brightnessctl
     pavucontrol
-
-    adwaita-icon-theme
-    papirus-icon-theme
   ];
 
   # Enable & config auto-cpufreq
@@ -148,6 +145,9 @@
       governor = "performance";
     };
   };
+
+  # Enable neovim
+  programs.neovim.enable = true;
 
   # Enable Hyprland
   programs.hyprland.enable = true;
