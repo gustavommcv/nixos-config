@@ -97,6 +97,10 @@
     shell = pkgs.zsh; 
  };
 
+ 
+  # Enable flatpaks
+  services.flatpak.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
