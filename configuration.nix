@@ -134,8 +134,8 @@
     brightnessctl
     pavucontrol
 
-    lxappearance
     adwaita-icon-theme
+    papirus-icon-theme
   ];
 
   # Enable & config auto-cpufreq
