@@ -67,6 +67,9 @@
   };
   services.displayManager.ly.enable = true;
  
+  services.udisks2.enable = true;
+  security.polkit.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -133,6 +136,8 @@
     wl-clipboard
     home-manager
     nautilus
+    gvfs
+    gnome-disk-utility
 
     waybar
     rofi
