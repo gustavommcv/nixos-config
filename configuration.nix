@@ -53,11 +53,19 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.displayManager.defaultSession = "hyprland";
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Disable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.desktopManager.gnome.enable = false;
 
+  # Enable hyprland + LY
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  services.displayManager.ly.enable = true;
+ 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -124,6 +132,7 @@
     fastfetch
     wl-clipboard
     home-manager
+    nautilus
 
     waybar
     rofi
@@ -152,9 +161,6 @@
 
   # Enable neovim
   programs.neovim.enable = true;
-
-  # Enable Hyprland
-  programs.hyprland.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
